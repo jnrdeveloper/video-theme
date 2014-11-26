@@ -1,0 +1,211 @@
+@import 'base/normalize'
+@import 'modules/extends'
+@import 'plugins/plugins'
+@import 'base/config'
+@import 'animation/animation'
+
+body
+	font-family: $font-family--primary
+	color: $emperor
+
+.video
+	position: absolute
+	top: -4px
+	right: 0
+	left: 0
+	min-width: 100%
+	//max-height: 100%
+	width: auto
+	height: auto
+	z-index: -1
+	@include filter(grayscale(50%))
+
+.logo
+	float: left
+	margin: 30px 0 0 30px
+	text-decoration: none
+	color: $white
+	font-size: rem(30)
+	font-weight: $font-weight--light
+	text-shadow: 1px 1px 1px rgba(0,0,0,.1)
+	//opacity: .7
+
+nav
+	float: right
+	padding: 30px 30px 0 0
+
+nav a
+	display: inline-block
+	margin-right: 20px
+	font-weight: $font-weight--light
+	font-size: rem(24)
+	color: $white
+	text-transform: lowercase
+	text-decoration: none
+
+#nav
+	margin-top: 315px
+
+h1
+	text-align: center
+	font-size: rem(72)
+	font-weight: $font-weight--thin
+	color: $white
+	text-transform: uppercase
+	text-shadow: 1px 1px 1px darken($black,1)
+	letter-spacing: .1em
+	margin-bottom: 20px
+	clear: both
+	padding-top: 160px
+	//opacity: .7
+
+.artist
+
+	display: inline-block
+	padding: .2em .5em
+	//border: 2px solid $white
+
+.kicker
+	text-align: center
+	font-weight: 400
+	text-transform: uppercase
+	text-shadow: 1px 1px 1px darken($black,1)
+	letter-spacing: .5rem
+	color: $white
+	line-height: 1
+	//opacity: .7
+
+@media (max-width: 640px)
+// header
+	.logo
+		//margin-left: 259px
+		font-size: rem(25)
+		
+	nav
+		float: none
+		text-align: center
+		padding-top: 80px
+		
+		& a
+			font-size: rem(18)
+			margin-right: -17px
+		
+// section about myself	
+	h1
+		padding-top: 0px
+		font-size: rem(35)
+
+	.kicker
+		font-size: rem(14)
+
+	h3
+		padding: 50px 0 40px
+		font-size: rem(16)
+
+	.blurb
+		position: relative
+		top: -100px
+		font-size: rem(14)
+
+	.skill-lockup
+		position: relative
+		top: -90px
+		left: 191px
+
+/* 3D rolling links*/
+
+*, *::after, *::before
+	@include box-sizing(border-box)
+
+.nav
+	text-align: center
+	float: right
+	margin: 20px 50px 0 0
+
+nav a
+	position: relative
+	display: inline-block
+	margin: 15px 25px
+	outline: none
+	font-weight: 300
+	font-size: rem(26)
+	color: rgb(255,255,255)
+	text-decoration: none
+	//text-transform: uppercase
+	//text-shadow: 0 0 1px rgba(255,255,255,.3)
+	letter-spacing: 1px
+	//opacity: .7
+
+nav a:hover,
+nav a:focus
+	outline: none
+
+/* 3D */
+
+.cl-effect-11 a 
+	padding: 10px 0
+	//border-top: 2px solid #0972b4
+	color: $white
+	text-shadow: none
+
+.cl-effect-11 a::before 
+	position: absolute
+	top: 0
+	left: 0
+	overflow: hidden
+	padding: 10px 0
+	max-width: 0
+	border-bottom: 2px solid $white
+	color: $white
+	//text-shadow: 1px 1px 1px $nobel
+	content: attr(data-hover)
+	@include transition(max-width  0.5s)
+
+.cl-effect-11 a:hover::before,
+.cl-effect-11 a:focus::before 
+	max-width: 100%
+
+/* Footer */
+
+footer
+	height: 200px
+	width: 100%
+	background: url(../img/header/tree.jpg) center center
+	background-size: cover
+	background-position-y: 85%
+
+.lockup
+	margin: 30px
+
+#lockup .logo
+	//background: url(../img/header/brand-three.png) no-repeat
+	float: left
+	margin: 80px 20px 0px 20px
+	font-size: rem(20)
+	color: $white
+	font-weight: $font-weight--thin
+	//text-shadow: 1px 1px 1px darken($black,1)
+
+.content-wrap nav
+	float: left
+	text-decoration: none
+	margin-top: 74px
+
+.content-wrap nav a
+	color: $white
+	font-size: em(16)
+	//text-shadow: 1px 1px 1px darken($black,1)
+
+.content-wrap nav a:hover
+	color: lighten($white,1)
+
+p.copyright
+	position: relative
+	clear: both
+	top: -10px
+	font-weight: $font-weight--thin 
+	color: $white
+	margin-left: 116px
+	padding-top: 20px
+	//text-shadow: 1px 1px 1px darken($black,1)
+
